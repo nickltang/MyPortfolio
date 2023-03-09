@@ -10,17 +10,17 @@ const About = () => {
                         About
                     </p>
                 </div>
-                <div></div>
+                
             </div>
             <div className='max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4'>
                 <div className='sm:text-right text-4xl font-bold'>
                     <p>
-                        Hi, I'm Nick, nice to meet you. Please take a look around.
+                        Hi, I'm Nick, nice to meet you. I’m a CS student at San Jose State University from Santa Clara, California.
                     </p>
                 </div>
                 <div>
-                    <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p className='border-t-4 border-transparent'>
+                        Growing up, I was fascinated by the power of technology in streamlining everyday life— this excitement has fueled my passion towards creating meaningful products with seamless user experiences. Having interned as a Full Stack Software Engineer, I aim to bring energy and enthusiasm alongside rock-solid programming, organization, and communication skills in everything I do.
                     </p>
                 </div>
             </div>

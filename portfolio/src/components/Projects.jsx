@@ -1,9 +1,10 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react'
-import Gdocs from '../assets/gdocs.png'
-import Workimg from '../assets/workimg.jpeg'
+import { data } from '../data/data.js'
 
 const Projects = () => {
+    const projects = data
+
   return (
     <div name='projects' className='w-full md:h-screen text-gray-300 bg-[#1d2127]'>
         {/* Container */}
@@ -16,90 +17,39 @@ const Projects = () => {
 
             {/* Project grid container*/}
             <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-
-                {/* Grid item */}
-                <div 
-                    style={{ backgroundImage: `url(${Gdocs})` }} 
-                    className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover effect for images */}
-                    <div className='opacity-0 group-hover:opacity-100'>
-                        <span className='text-2xl font-bold text-white tracking-wider'>
-                            QuizletDocs
-                        </span>
-                        <div className='pt-8 text-center'>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                            </a>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                            </a>
+                { projects.map((item, index) => ( 
+                    <div 
+                        key={index}
+                        style={{ backgroundImage: `url(${item.image})` }} 
+                        className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
+                    >
+                        <div className='opacity-0 group-hover:opacity-100'>
+                            <span className='text-2xl font-bold text-white tracking-wider'>
+                                {item.name}
+                            </span>
+                            <div className='pt-8 text-center'>
+                                { item.live === '' 
+                                    ? <></>
+                                    : (<a href={item.live} target='_blank' rel="noreferrer">
+                                            <button 
+                                                className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'
+                                            >
+                                                Live
+                                            </button>
+                                        </a>)
+                                }
+                                <a href={item.github} target='_blank' rel="noreferrer">
+                                    <button 
+                                        className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'
+                                    >
+                                        Code
+                                    </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                {/* Grid item */}
-                <div 
-                    style={{backgroundImage: `url(${Workimg})`}} 
-                    className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover effects*/}
-                    <div className='opacity-0 group-hover:opacity-100'>
-                        <span className='text-2xl font-bold text-white tracking-wider'>
-                            Fitness Tracker
-                        </span>
-                        <div className='pt-8 text-center'>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                            </a>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                ))}
                 
-                {/* Grid item */}
-                <div 
-                    style={{ backgroundImage: `url(${Gdocs})` }} 
-                    className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover effect for images */}
-                    <div className='opacity-0 group-hover:opacity-100'>
-                        <span className='text-2xl font-bold text-white tracking-wider'>
-                            QuizletDocs
-                        </span>
-                        <div className='pt-8 text-center'>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                            </a>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Grid item */}
-                <div 
-                    style={{backgroundImage: `url(${Workimg})`}} 
-                    className='shadow-lg shadow-[#040c16] group container rounded-md flex justify-center items-center mx-auto content-div'
-                >
-                    {/* Hover effects*/}
-                    <div className='opacity-0 group-hover:opacity-100'>
-                        <span className='text-2xl font-bold text-white tracking-wider'>
-                            Fitness Tracker
-                        </span>
-                        <div className='pt-8 text-center'>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Demo</button>
-                            </a>
-                            <a href='/'>
-                                <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>Code</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
