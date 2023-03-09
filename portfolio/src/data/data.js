@@ -1,7 +1,7 @@
 import Gdocs from '../assets/gdocs.png'
 import Lowkey from '../assets/lowkey.png'
 import Portfolio from '../assets/portfolio.png'
-import Stocked from '../assets/stocked.png'
+import Stocked from '../assets/stocked.jpeg'
 
 export const data = [
     {
